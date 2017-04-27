@@ -1,0 +1,109 @@
+@import 'theme/layout.css';
+@import 'theme/colors.css';
+
+.component {
+  background-color: var(--color-nav);
+  box-sizing: border-box;
+  color: var(--color-nav-text);
+  height: calc(100% - var(--height-header));
+  left: calc((100% - var(--width-container)) / 2);
+  padding: 0 var(--padding-container);
+  position: fixed;
+  transition: left 500ms;
+  top: var(--height-header);
+  width: var(--width-nav);
+  z-index: 9000;
+}
+@media screen and (max-width: 1040px) {  /* var() doesn't work here; +16px for scrollbar */
+  .component {
+    left: 0;
+  }
+}
+@media screen and (max-width: 600px) {
+  .component {
+    box-shadow: 4px 0px 4px 0 rgb(0, 0, 0, 0.2);
+  }
+  :global .nav-hidden :local .component {
+    left: -var(--width-nav);
+    box-shadow: none;
+  }
+}
+.component a {
+  color: inherit;
+  text-decoration: none;
+}
+.component a:visited {
+  color: inherit;
+}
+.component > * {
+  padding-top: var(--padding-container);
+}
+.avatar {
+  display: flex;
+  height: 150px;
+  margin: 0 auto;
+  width: 150px;
+}
+.nav a {
+  display: block;
+  font-weight: bold;
+  line-height: 40px;
+  padding-left: 32px;
+  position: relative;
+}
+.nav a:hover {
+  color: var(--color-article-title);
+}
+.nav:hover a::before {
+  opacity: 0.5;
+}
+.nav a::before {
+  background-image: url(../img/ff6-pointer.png);
+  background-position: 0 9px;
+  background-repeat: no-repeat;
+  background-size: 32px 32px;
+  content: '';
+  display: none;
+  height: 40px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 32px;
+}
+.nav a:hover::before {
+  display: block;
+  opacity: 1;
+}
+.selected::before {
+  display: block !important;
+}
+.social {
+  display: flex;
+  font-family: 'Mono Social Icons Font';
+  font-size: 50px;
+  font-smoothing: antialiased;
+  justify-content: space-between;
+  line-height: 41px;
+  margin: 0 7px;
+  text-rendering: optimizeLegibility;
+}
+.social a {
+  color: #000;
+  display: block;
+  opacity: 0.5;
+  text-align: center;
+}
+.social a:visited {
+  color: #000;
+}
+.social a:hover {
+  opacity: 0.75;
+}
+.leetcode img {
+  border-radius: 50%;
+  box-sizing: border-box;
+  height: 41px;
+  position: relative;
+  top: 1px;
+  width: 41px;
+}

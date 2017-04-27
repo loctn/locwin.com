@@ -1,0 +1,16 @@
+@font-face {
+  font-family: 'Mono Social Icons Font';
+  src: url('~/../theme/fonts/MonoSocialIconsFont-1.10.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root {
+  --font-family-default: 'Muli', Arial, Helvetica, sans-serif;
+  --font-size-default: 16px;
+  --font-size-header: 20px;
+  --height-header: 64px;
+  --padding-container: 25px;
+  --width-container: 1024px;
+  --width-nav: 250px;
+}
